@@ -17,6 +17,14 @@ public class Comment extends BaseEntity{
 		this.id_user = id_user;
 		this.id_new = id_new;
 	}
+	
+	public Comment(int id, String content, Date comment_date, int id_user, int id_new) {
+		super(id);
+		this.content = content;
+		this.comment_date = comment_date;
+		this.id_user = id_user;
+		this.id_new = id_new;
+	}
 
 	public boolean isStatus() {
 		return status;

@@ -9,7 +9,6 @@ public class NewModel extends Message{
 	private List<New> news;
 	
 	public NewModel() {
-		super();
 	}
 
 	public NewModel(boolean success, String message, List<New> news) {
