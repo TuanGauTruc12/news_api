@@ -16,7 +16,7 @@ public class CategoryDatabase extends Config{
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM category");
 			while (resultSet.next()) {
 				categories.add(new Category(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3),
-						resultSet.getInt(4)));
+						resultSet.getInt(4), resultSet.getString(5)));
 			}
 			return new CategoryModel(true, "successfully", categories);
 		} catch (Exception ex) {
@@ -31,7 +31,7 @@ public class CategoryDatabase extends Config{
 		try {
 			ResultSet resultSet = statement.executeQuery("SELECT * FROM category WHERE slug = '" + slug + "'");
 		if(resultSet.next()) {
-			categories.add(new Category(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getInt(4)));
+			categories.add(new Category(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getInt(4), resultSet.getString(5)));
 		}
 		if(categories.size() == 1) {
 			return new CategoryModel(true, "successfully", categories);			
