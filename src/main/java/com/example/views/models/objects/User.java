@@ -7,10 +7,9 @@ public class User extends BaseEntity{
 	private int id_role;
 	private String mobile;
 	private String email_accuracy;
-	private boolean bright;
-
-	public User(int id, String name, String email, String password, int id_role, String mobile, String email_accuracy,
-			boolean bright) {
+	private String image;
+	
+	public User(int id, String name, String email, String password, int id_role, String mobile, String email_accuracy, String image) {
 		super(id);
 		this.name = name;
 		this.email = email;
@@ -18,7 +17,7 @@ public class User extends BaseEntity{
 		this.id_role = id_role;
 		this.mobile = mobile;
 		this.email_accuracy = email_accuracy;
-		this.bright = bright;
+		this.image = image;
 	}
 	
 	public String getName() {
@@ -57,10 +56,10 @@ public class User extends BaseEntity{
 	public void setEmail_accuracy(String email_accuracy) {
 		this.email_accuracy = email_accuracy;
 	}
-	public boolean isBright() {
-		return bright;
+	public String getImage() {
+		return image;
 	}
-	public void setBright(boolean bright) {
-		this.bright = bright;
+	public void setImage(String image) {
+		this.image = image;
 	}
 }
