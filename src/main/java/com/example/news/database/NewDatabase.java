@@ -60,4 +60,10 @@ public class NewDatabase extends Config {
 		return getNew(
 				"FROM new, property, category WHERE property.id = new.id_property AND property.slug = '" + property + "' AND category.id = new.id_category AND category.slug = '" + category +"'");
 	}
+	
+
+	public NewModel getNew() {
+		return getNew(
+				"FROM new, user WHERE new.status = 1 AND user.id = new.author AND user.id_role <> 0 ORDER BY new.posting_date DESC;");
+	}
 }

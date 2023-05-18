@@ -8,6 +8,7 @@ public class Comment extends BaseEntity{
 	private boolean status;
 	private int id_user;
 	private int id_new;
+	private String nameUser;
 	
 	public Comment(int id, String content, Date comment_date, boolean status, int id_user, int id_new) {
 		super(id);
@@ -18,12 +19,13 @@ public class Comment extends BaseEntity{
 		this.id_new = id_new;
 	}
 	
-	public Comment(int id, String content, Date comment_date, int id_user, int id_new) {
+	public Comment(int id, String content, Date comment_date, int id_user, int id_new, String nameUser) {
 		super(id);
 		this.content = content;
 		this.comment_date = comment_date;
 		this.id_user = id_user;
 		this.id_new = id_new;
+		this.nameUser = nameUser;
 	}
 
 	public boolean isStatus() {
@@ -64,5 +66,13 @@ public class Comment extends BaseEntity{
 
 	public void setComment_date(Date comment_date) {
 		this.comment_date = comment_date;
+	}
+	
+	public String getNameUser() {
+		return nameUser;
+	}
+
+	public void setNameUser(String nameUser) {
+		this.nameUser = nameUser;
 	}
 }
